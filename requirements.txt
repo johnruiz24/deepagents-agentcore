@@ -1,0 +1,30 @@
+# AgentCore dependencies
+bedrock-agentcore
+bedrock-agentcore-starter-toolkit
+
+# LangChain dependencies
+langchain
+langchain-core
+langchain-aws
+langchain-anthropic
+langgraph
+
+# Deep Agents framework
+# Note: Install from local project during deployment
+# deepagents>=0.0.10
+
+# AWS SDK
+boto3
+botocore
+
+# Data validation and serialization
+pydantic>=2.0.0
+
+# Environment variables
+python-dotenv
+
+# JSON handling (standard library, but explicitly listing for clarity)
+# json (standard library)
+
+# Date/time handling (standard library)
+# datetime (standard library)
