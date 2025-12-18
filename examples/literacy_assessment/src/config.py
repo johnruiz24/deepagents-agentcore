@@ -27,10 +27,10 @@ class LiteracyAssessmentConfig:
 
     # Knowledge Base IDs (one per literacy level)
     # These are pre-configured AWS Bedrock Knowledge Bases in eu-central-1
-    KB_LEVEL_1_ID: str = os.getenv("KB_LEVEL_1_ID", "QADZTSAPWX")
-    KB_LEVEL_2_ID: str = os.getenv("KB_LEVEL_2_ID", "KGGD2PTQ2N")
-    KB_LEVEL_3_ID: str = os.getenv("KB_LEVEL_3_ID", "7MGFSODDVI")
-    KB_LEVEL_4_ID: str = os.getenv("KB_LEVEL_4_ID", "CHYWO1H6OM")  # Level 4 Expert KB
+    KB_LEVEL_1_ID: str = os.getenv("KB_LEVEL_1_ID", "YOUR_LEVEL_1_KB_ID")
+    KB_LEVEL_2_ID: str = os.getenv("KB_LEVEL_2_ID", "YOUR_LEVEL_2_KB_ID")
+    KB_LEVEL_3_ID: str = os.getenv("KB_LEVEL_3_ID", "YOUR_LEVEL_3_KB_ID")
+    KB_LEVEL_4_ID: str = os.getenv("KB_LEVEL_4_ID", "YOUR_LEVEL_4_KB_ID")  # Level 4 Expert KB
 
     # Assessment Configuration
     ASSESSMENT_TIMEOUT: int = int(os.getenv("ASSESSMENT_TIMEOUT", "60"))  # seconds
@@ -61,7 +61,7 @@ class LiteracyAssessmentConfig:
     # S3 Upload Configuration
     S3_BUCKET_NAME: str = os.getenv(
         "S3_BUCKET_NAME",
-        "literacy-framework-development-961105418118-eu-central-1"
+        "literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1"
     )
     S3_PREFIX: str = os.getenv("S3_PREFIX", "learning_path/assessments")
     S3_REGION: str = os.getenv("S3_REGION", AWS_REGION)  # Inherit from AWS_REGION

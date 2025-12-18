@@ -33,10 +33,10 @@ Combined Assessment JSON
 - Return JSON assessment
 
 ### Bedrock KBs
-- **Level 1**: QADZTSAPWX (Foundational)
-- **Level 2**: KGGD2PTQ2N (Intermediate)
-- **Level 3**: 7MGFSODDVI (Advanced)
-- **Level 4**: 7MGFSODDVI (Expert)
+- **Level 1**: YOUR_LEVEL_1_KB_ID (Foundational)
+- **Level 2**: YOUR_LEVEL_2_KB_ID (Intermediate)
+- **Level 3**: YOUR_LEVEL_3_KB_ID (Advanced)
+- **Level 4**: YOUR_LEVEL_3_KB_ID (Expert)
 
 ## Data Flow
 

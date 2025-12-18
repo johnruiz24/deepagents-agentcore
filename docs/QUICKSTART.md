@@ -10,8 +10,8 @@ pip install -r requirements.txt
 
 ### 2. Configure AWS
 ```bash
-# Ensure mll-dev profile exists
-aws configure --profile mll-dev
+# Ensure your-aws-profile profile exists
+aws configure --profile your-aws-profile
 # Region: eu-central-1
 ```
 
@@ -36,10 +36,10 @@ python deploy.py
 
 | Level | KB ID | Region |
 |-------|-------|--------|
-| 1 | QADZTSAPWX | eu-central-1 |
-| 2 | KGGD2PTQ2N | eu-central-1 |
-| 3 | 7MGFSODDVI | eu-central-1 |
-| 4 | 7MGFSODDVI | eu-central-1 |
+| 1 | YOUR_LEVEL_1_KB_ID | eu-central-1 |
+| 2 | YOUR_LEVEL_2_KB_ID | eu-central-1 |
+| 3 | YOUR_LEVEL_3_KB_ID | eu-central-1 |
+| 4 | YOUR_LEVEL_3_KB_ID | eu-central-1 |
 
 ## 💡 Usage Examples
 

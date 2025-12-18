@@ -264,7 +264,7 @@ bedrock_client = boto3.client(
 
 def query_level_1_kb(query: str, max_results: int = 10):
     response = bedrock_client.retrieve(
-        knowledgeBaseId='QADZTSAPWX',
+        knowledgeBaseId='YOUR_LEVEL_1_KB_ID',
         retrievalQuery={'text': query},
         retrievalConfiguration={
             'vectorSearchConfiguration': {

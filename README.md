@@ -16,10 +16,10 @@ This deployment package enables serverless deployment of the Literacy Assessment
 
 ```
 User Request → AgentCore Endpoint → serve_bedrock.py → Literacy Assessment Agent
-                                                              ├─ Level 1 KB (QADZTSAPWX)
-                                                              ├─ Level 2 KB (KGGD2PTQ2N)
-                                                              ├─ Level 3 KB (7MGFSODDVI)
-                                                              └─ Level 4 KB (CHYWO1H6OM)
+                                                              ├─ Level 1 KB (YOUR_LEVEL_1_KB_ID)
+                                                              ├─ Level 2 KB (YOUR_LEVEL_2_KB_ID)
+                                                              ├─ Level 3 KB (YOUR_LEVEL_3_KB_ID)
+                                                              └─ Level 4 KB (YOUR_LEVEL_4_KB_ID)
                                                                       ↓
                                                               Assessment JSON
                                                                       ↓
@@ -40,11 +40,11 @@ User Request → AgentCore Endpoint → serve_bedrock.py → Literacy Assessment
 
 ### AWS Permissions
 
-Your AWS profile (`mll-dev`) must have permissions to:
+Your AWS profile (`your-aws-profile`) must have permissions to:
 
 - Create/delete IAM roles and policies
 - Access Bedrock (invoke models, query knowledge bases)
-- Access S3 bucket (`literacy-framework-development-961105418118-eu-central-1`)
+- Access S3 bucket (`literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1`)
 - Use AgentCore (configure, launch, invoke)
 - Create ECR repositories
 - Create CloudWatch log groups
@@ -55,15 +55,15 @@ Ensure the following Bedrock Knowledge Bases are created and accessible:
 
 | Level | KB ID | Purpose |
 |-------|-------|---------|
-| Level 1 | `QADZTSAPWX` | Foundational content |
-| Level 2 | `KGGD2PTQ2N` | Intermediate content |
-| Level 3 | `7MGFSODDVI` | Advanced content |
-| Level 4 | `CHYWO1H6OM` | Expert content (shares with Level 3) |
+| Level 1 | `YOUR_LEVEL_1_KB_ID` | Foundational content |
+| Level 2 | `YOUR_LEVEL_2_KB_ID` | Intermediate content |
+| Level 3 | `YOUR_LEVEL_3_KB_ID` | Advanced content |
+| Level 4 | `YOUR_LEVEL_4_KB_ID` | Expert content (shares with Level 3) |
 
 ### S3 Bucket Structure
 
 ```
-s3://literacy-framework-development-961105418118-eu-central-1/
+s3://literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1/
 ├── learning_path/
 │   ├── levels/              # Knowledge base source documents (read)
 │   │   ├── level_1/
@@ -98,7 +98,7 @@ cd /Users/john.ruiz/Documents/projects/deepagents/deploy/agentcore_literacy_asse
 Ensure your AWS profile is configured:
 
 ```bash
-export AWS_PROFILE=mll-dev
+export AWS_PROFILE=your-aws-profile
 export AWS_REGION=eu-central-1
 ```
 
@@ -235,13 +235,13 @@ AgentCore automatically creates CloudWatch log groups for agent invocations:
 ```bash
 # List log groups
 aws logs describe-log-groups \
-  --profile mll-dev \
+  --profile your-aws-profile \
   --region eu-central-1 \
   --log-group-name-prefix /aws/bedrock-agentcore/runtimes/literacy_assessment
 
 # Tail recent logs
 aws logs tail /aws/bedrock-agentcore/runtimes/literacy_assessment-<id> \
-  --profile mll-dev \
+  --profile your-aws-profile \
   --region eu-central-1 \
   --follow
 ```

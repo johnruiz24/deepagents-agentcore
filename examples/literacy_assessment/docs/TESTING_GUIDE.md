@@ -18,10 +18,10 @@ pip install -r requirements.txt
 
 ### 2. Configure AWS Credentials
 
-Ensure your `~/.aws/credentials` file has the `mll-dev` profile:
+Ensure your `~/.aws/credentials` file has the `your-aws-profile` profile:
 
 ```ini
-[mll-dev]
+[your-aws-profile]
 aws_access_key_id = YOUR_ACCESS_KEY
 aws_secret_access_key = YOUR_SECRET_KEY
 ```
@@ -34,11 +34,11 @@ python -m examples.literacy_assessment.scripts.validate_config
 
 Expected output:
 ```
-✓ AWS credentials configured (profile: mll-dev)
-✓ Knowledge Base Level 1: QADZTSAPWX (accessible)
-✓ Knowledge Base Level 2: KGGD2PTQ2N (accessible)
-✓ Knowledge Base Level 3: 7MGFSODDVI (accessible)
-✓ Knowledge Base Level 4: 7MGFSODDVI (accessible)
+✓ AWS credentials configured (profile: your-aws-profile)
+✓ Knowledge Base Level 1: YOUR_LEVEL_1_KB_ID (accessible)
+✓ Knowledge Base Level 2: YOUR_LEVEL_2_KB_ID (accessible)
+✓ Knowledge Base Level 3: YOUR_LEVEL_3_KB_ID (accessible)
+✓ Knowledge Base Level 4: YOUR_LEVEL_3_KB_ID (accessible)
 ✓ Configuration complete!
 ```
 

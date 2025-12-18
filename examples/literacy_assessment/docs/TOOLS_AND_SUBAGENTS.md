@@ -106,7 +106,7 @@ Your response:
 
 **File**: `examples/literacy_assessment/src/agent.py` (lines 35-161)
 **Name**: `level-1-assessment-agent`
-**Knowledge Base**: QADZTSAPWX (Level 1 content)
+**Knowledge Base**: YOUR_LEVEL_1_KB_ID (Level 1 content)
 **Difficulty**: Beginner
 
 #### Configuration
@@ -233,7 +233,7 @@ The subagent tailors questions to the user's professional domain:
 
 **File**: `examples/literacy_assessment/src/agent.py` (lines 162-292)
 **Name**: `level-2-assessment-agent`
-**Knowledge Base**: KGGD2PTQ2N (Level 2 content)
+**Knowledge Base**: YOUR_LEVEL_2_KB_ID (Level 2 content)
 **Difficulty**: Intermediate
 
 #### Configuration
@@ -304,7 +304,7 @@ Same structure as Level 1 (7 MC + 3 OE, 5+ modules), but with **intermediate com
 
 **File**: `examples/literacy_assessment/src/agent.py` (lines 294-429)
 **Name**: `level-3-assessment-agent`
-**Knowledge Base**: 7MGFSODDVI (Level 3 content)
+**Knowledge Base**: YOUR_LEVEL_3_KB_ID (Level 3 content)
 **Difficulty**: Advanced
 
 #### Configuration
@@ -381,7 +381,7 @@ Same structure (7 MC + 3 OE, 5+ modules), but with **advanced complexity**:
 
 **File**: `examples/literacy_assessment/src/agent.py` (lines 431-569)
 **Name**: `level-4-assessment-agent`
-**Knowledge Base**: CHYWO1H6OM (Level 4 content)
+**Knowledge Base**: YOUR_LEVEL_4_KB_ID (Level 4 content)
 **Difficulty**: Expert
 
 #### Configuration
@@ -616,10 +616,10 @@ if result["status"] == "success":
 
 | Level | KB ID | Content Description |
 |-------|-------|---------------------|
-| Level 1 | QADZTSAPWX | Foundational literacy curriculum (L1-M1 through L1-M7) |
-| Level 2 | KGGD2PTQ2N | Intermediate literacy curriculum (L2-M1 through L2-M7) |
-| Level 3 | 7MGFSODDVI | Advanced literacy curriculum (L3-M1 through L3-M7) |
-| Level 4 | CHYWO1H6OM | Expert literacy curriculum (L4-M1 through L4-M7) |
+| Level 1 | YOUR_LEVEL_1_KB_ID | Foundational literacy curriculum (L1-M1 through L1-M7) |
+| Level 2 | YOUR_LEVEL_2_KB_ID | Intermediate literacy curriculum (L2-M1 through L2-M7) |
+| Level 3 | YOUR_LEVEL_3_KB_ID | Advanced literacy curriculum (L3-M1 through L3-M7) |
+| Level 4 | YOUR_LEVEL_4_KB_ID | Expert literacy curriculum (L4-M1 through L4-M7) |
 
 ---
 
@@ -646,7 +646,7 @@ def upload_assessment_to_s3(assessment_json: str, level: int) -> dict:
             "s3_uri_markdown": "s3://bucket/path/level_2_20251106_034423.md",
             "level": 2,
             "timestamp": "2025-11-06T03:44:22.918557",
-            "bucket": "literacy-framework-development-961105418118-eu-central-1",
+            "bucket": "literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1",
             "prefix": "learning_path/assessments"
         }
 
@@ -790,7 +790,7 @@ if result["status"] == "success":
 #### S3 Bucket Structure
 
 ```
-s3://literacy-framework-development-961105418118-eu-central-1/
+s3://literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1/
 └── learning_path/
     └── assessments/
         ├── level_1/

@@ -6,11 +6,11 @@ agents:
     platform: linux/arm64
     container_runtime: docker
     aws:
-      execution_role: arn:aws:iam::961105418118:role/agentcore-literacy_assessment-role-0511
+      execution_role: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/agentcore-literacy_assessment-role-0511
       execution_role_auto_create: false
-      account: '961105418118'
+      account: 'YOUR_AWS_ACCOUNT_ID'
       region: eu-central-1
-      ecr_repository: 961105418118.dkr.ecr.eu-central-1.amazonaws.com/bedrock-agentcore-literacy_assessment
+      ecr_repository: YOUR_AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/bedrock-agentcore-literacy_assessment
       ecr_auto_create: false
       network_configuration:
         network_mode: PUBLIC
@@ -20,11 +20,11 @@ agents:
         enabled: true
     bedrock_agentcore:
       agent_id: literacy_assessment-nOAwV9Bfmp
-      agent_arn: arn:aws:bedrock-agentcore:eu-central-1:961105418118:runtime/literacy_assessment-nOAwV9Bfmp
+      agent_arn: arn:aws:bedrock-agentcore:eu-central-1:YOUR_AWS_ACCOUNT_ID:runtime/literacy_assessment-nOAwV9Bfmp
       agent_session_id: 51cf0f08-d7ab-4a40-a921-5f924719d41a
     codebuild:
       project_name: bedrock-agentcore-literacy_assessment-builder
-      execution_role: arn:aws:iam::961105418118:role/AmazonBedrockAgentCoreSDKCodeBuild-eu-central-1-5af9491001
-      source_bucket: bedrock-agentcore-codebuild-sources-961105418118-eu-central-1
+      execution_role: arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/AmazonBedrockAgentCoreSDKCodeBuild-eu-central-1-5af9491001
+      source_bucket: bedrock-agentcore-codebuild-sources-YOUR_AWS_ACCOUNT_ID-eu-central-1
     authorizer_configuration: null
     oauth_configuration: null

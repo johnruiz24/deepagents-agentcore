@@ -15,10 +15,10 @@ A Deep Agents-based system that dynamically generates custom literacy assessment
 
 ```
 Main Orchestrator Agent
-├── Level 1 Subagent → KB: QADZTSAPWX (Foundational content)
-├── Level 2 Subagent → KB: KGGD2PTQ2N (Intermediate content)
-├── Level 3 Subagent → KB: 7MGFSODDVI (Advanced content)
-└── Level 4 Subagent → KB: 7MGFSODDVI (Expert content, shared with L3)
+├── Level 1 Subagent → KB: YOUR_LEVEL_1_KB_ID (Foundational content)
+├── Level 2 Subagent → KB: YOUR_LEVEL_2_KB_ID (Intermediate content)
+├── Level 3 Subagent → KB: YOUR_LEVEL_3_KB_ID (Advanced content)
+└── Level 4 Subagent → KB: YOUR_LEVEL_3_KB_ID (Expert content, shared with L3)
 ```
 
 ## Quick Start
@@ -46,18 +46,18 @@ The `.env` file is already pre-configured with the knowledge base IDs:
 
 ```bash
 AWS_REGION=eu-central-1
-AWS_PROFILE=mll-dev
+AWS_PROFILE=your-aws-profile
 
-KB_LEVEL_1_ID=QADZTSAPWX
-KB_LEVEL_2_ID=KGGD2PTQ2N
-KB_LEVEL_3_ID=7MGFSODDVI
-KB_LEVEL_4_ID=7MGFSODDVI
+KB_LEVEL_1_ID=YOUR_LEVEL_1_KB_ID
+KB_LEVEL_2_ID=YOUR_LEVEL_2_KB_ID
+KB_LEVEL_3_ID=YOUR_LEVEL_3_KB_ID
+KB_LEVEL_4_ID=YOUR_LEVEL_3_KB_ID
 ```
 
-Ensure your `~/.aws/credentials` file has the `mll-dev` profile configured:
+Ensure your `~/.aws/credentials` file has the `your-aws-profile` profile configured:
 
 ```ini
-[mll-dev]
+[your-aws-profile]
 aws_access_key_id = YOUR_ACCESS_KEY
 aws_secret_access_key = YOUR_SECRET_KEY
 ```
@@ -73,12 +73,12 @@ python -m examples.literacy_assessment.validate_config
 Expected output:
 
 ```
-✓ AWS credentials configured (profile: mll-dev)
+✓ AWS credentials configured (profile: your-aws-profile)
 ✓ AWS region set: eu-central-1
-✓ Knowledge Base Level 1: QADZTSAPWX (accessible)
-✓ Knowledge Base Level 2: KGGD2PTQ2N (accessible)
-✓ Knowledge Base Level 3: 7MGFSODDVI (accessible)
-✓ Knowledge Base Level 4: 7MGFSODDVI (accessible)
+✓ Knowledge Base Level 1: YOUR_LEVEL_1_KB_ID (accessible)
+✓ Knowledge Base Level 2: YOUR_LEVEL_2_KB_ID (accessible)
+✓ Knowledge Base Level 3: YOUR_LEVEL_3_KB_ID (accessible)
+✓ Knowledge Base Level 4: YOUR_LEVEL_3_KB_ID (accessible)
 ✓ All 4 knowledge bases validated
 ✓ Configuration complete!
 ```
@@ -249,7 +249,7 @@ examples/literacy-assessment/
 **Solution**:
 1. Verify KB IDs in `.env` match actual KBs
 2. Check AWS region is `eu-central-1`
-3. Run: `aws bedrock-agent get-knowledge-base --knowledge-base-id QADZTSAPWX --profile mll-dev --region eu-central-1`
+3. Run: `aws bedrock-agent get-knowledge-base --knowledge-base-id YOUR_LEVEL_1_KB_ID --profile your-aws-profile --region eu-central-1`
 
 ### "Access denied" errors
 
@@ -268,9 +268,9 @@ examples/literacy-assessment/
       "bedrock-agent:GetKnowledgeBase"
     ],
     "Resource": [
-      "arn:aws:bedrock:eu-central-1:*:knowledge-base/QADZTSAPWX",
-      "arn:aws:bedrock:eu-central-1:*:knowledge-base/KGGD2PTQ2N",
-      "arn:aws:bedrock:eu-central-1:*:knowledge-base/7MGFSODDVI"
+      "arn:aws:bedrock:eu-central-1:*:knowledge-base/YOUR_LEVEL_1_KB_ID",
+      "arn:aws:bedrock:eu-central-1:*:knowledge-base/YOUR_LEVEL_2_KB_ID",
+      "arn:aws:bedrock:eu-central-1:*:knowledge-base/YOUR_LEVEL_3_KB_ID"
     ]
   }]
 }
@@ -292,7 +292,7 @@ examples/literacy-assessment/
 
 **Solution**:
 1. Verify curriculum content uploaded for all modules
-2. Check KB indexing: `aws bedrock-agent list-data-sources --knowledge-base-id QADZTSAPWX --profile mll-dev`
+2. Check KB indexing: `aws bedrock-agent list-data-sources --knowledge-base-id YOUR_LEVEL_1_KB_ID --profile your-aws-profile`
 3. Trigger manual sync if needed
 4. Ensure curriculum documents have clear module metadata
 

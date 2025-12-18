@@ -34,14 +34,14 @@ The Literacy Assessment Agent is a multi-agent system that generates personalize
                                  ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    AWS BEDROCK AGENTCORE ENDPOINT                             │
-│  ARN: arn:aws:bedrock-agentcore:eu-central-1:961105418118:runtime/...       │
+│  ARN: arn:aws:bedrock-agentcore:eu-central-1:YOUR_AWS_ACCOUNT_ID:runtime/...       │
 │  Protocol: HTTP | Network: PUBLIC | Region: eu-central-1                     │
 └────────────────────────────────┬────────────────────────────────────────────┘
                                  │
                                  ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          DOCKER CONTAINER                                     │
-│  Image: 961105418118.dkr.ecr.eu-central-1.amazonaws.com/                     │
+│  Image: YOUR_AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/                     │
 │         bedrock-agentcore-literacy_assessment                                 │
 │  Runtime: Python 3.12 | Platform: linux/arm64                                │
 │                                                                               │
@@ -113,7 +113,7 @@ The Literacy Assessment Agent is a multi-agent system that generates personalize
 │                                                                               │
 │  ┌───────────────────────────────────────────────────────────────────────┐ │
 │  │  AWS BEDROCK KNOWLEDGE BASE (Level 2)                                 │ │
-│  │  ID: KGGD2PTQ2N                                                       │ │
+│  │  ID: YOUR_LEVEL_2_KB_ID                                                       │ │
 │  │  Region: eu-central-1                                                 │ │
 │  │  Content: Intermediate literacy curriculum (L2-M1 through L2-M7)     │ │
 │  │                                                                        │ │
@@ -123,7 +123,7 @@ The Literacy Assessment Agent is a multi-agent system that generates personalize
 │                                                                               │
 │  ┌───────────────────────────────────────────────────────────────────────┐ │
 │  │  AMAZON S3 BUCKET                                                     │ │
-│  │  Name: literacy-framework-development-961105418118-eu-central-1       │ │
+│  │  Name: literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1       │ │
 │  │  Region: eu-central-1                                                 │ │
 │  │  Path: learning_path/assessments/level_2/                            │ │
 │  │                                                                        │ │
@@ -195,10 +195,10 @@ Each subagent is specialized for one literacy level:
 
 | Level | Name | KB ID | Difficulty | Lines |
 |-------|------|-------|------------|-------|
-| Level 1 | level-1-assessment-agent | QADZTSAPWX | Foundational | 35-161 |
-| Level 2 | level-2-assessment-agent | KGGD2PTQ2N | Intermediate | 162-292 |
-| Level 3 | level-3-assessment-agent | 7MGFSODDVI | Advanced | 294-429 |
-| Level 4 | level-4-assessment-agent | CHYWO1H6OM | Expert | 431-569 |
+| Level 1 | level-1-assessment-agent | YOUR_LEVEL_1_KB_ID | Foundational | 35-161 |
+| Level 2 | level-2-assessment-agent | YOUR_LEVEL_2_KB_ID | Intermediate | 162-292 |
+| Level 3 | level-3-assessment-agent | YOUR_LEVEL_3_KB_ID | Advanced | 294-429 |
+| Level 4 | level-4-assessment-agent | YOUR_LEVEL_4_KB_ID | Expert | 431-569 |
 
 **Common Structure**:
 ```python
@@ -287,7 +287,7 @@ def upload_assessment_to_s3(assessment_json: str, level: int) -> dict:
             "s3_uri_markdown": "s3://.../level_2_20251106_034423.md",
             "level": 2,
             "timestamp": "2025-11-06T03:44:22.918557",
-            "bucket": "literacy-framework-development-961105418118-eu-central-1",
+            "bucket": "literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1",
             "prefix": "learning_path/assessments"
         }
     """
@@ -594,7 +594,7 @@ Local Development Machine
     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  Amazon ECR                                                          │
-│  Repository: 961105418118.dkr.ecr.eu-central-1.amazonaws.com/       │
+│  Repository: YOUR_AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/       │
 │              bedrock-agentcore-literacy_assessment                   │
 │  ┌────────────────────────────────────────────────────────────┐    │
 │  │  Container Image Storage                                    │    │
@@ -608,7 +608,7 @@ Local Development Machine
 ┌─────────────────────────────────────────────────────────────────────┐
 │  AWS Bedrock AgentCore                                               │
 │  Agent: literacy_assessment-nOAwV9Bfmp                               │
-│  ARN: arn:aws:bedrock-agentcore:eu-central-1:961105418118:runtime/  │
+│  ARN: arn:aws:bedrock-agentcore:eu-central-1:YOUR_AWS_ACCOUNT_ID:runtime/  │
 │       literacy_assessment-nOAwV9Bfmp                                 │
 │  ┌────────────────────────────────────────────────────────────┐    │
 │  │  Serverless Runtime                                         │    │

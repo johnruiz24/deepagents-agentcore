@@ -27,10 +27,10 @@ deploy/agentcore_literacy_assessment/
 
 ### 1. Four Level-Specific Subagents
 Each queries its own Bedrock KB:
-- Level 1 → QADZTSAPWX
-- Level 2 → KGGD2PTQ2N
-- Level 3 → 7MGFSODDVI
-- Level 4 → 7MGFSODDVI
+- Level 1 → YOUR_LEVEL_1_KB_ID
+- Level 2 → YOUR_LEVEL_2_KB_ID
+- Level 3 → YOUR_LEVEL_3_KB_ID
+- Level 4 → YOUR_LEVEL_3_KB_ID
 
 ### 2. Parallel Execution
 When multiple levels requested, subagents run simultaneously:
@@ -47,7 +47,7 @@ When multiple levels requested, subagents run simultaneously:
 - JSON output format
 
 ### 4. AWS Integration
-- Profile: `mll-dev`
+- Profile: `your-aws-profile`
 - Region: `eu-central-1`
 - Client: `bedrock-agent-runtime`
 - API: `retrieve()` for KB queries
@@ -128,7 +128,7 @@ Added to AgentCore role:
 
 ## 🐛 Known Issues
 
-- Levels 3 and 4 share same KB ID (7MGFSODDVI) - verify this is intentional
+- Levels 3 and 4 share same KB ID (YOUR_LEVEL_3_KB_ID) - verify this is intentional
 - First invocation may be slower due to cold start
 - Large KB queries may exceed 60s target - consider caching
 

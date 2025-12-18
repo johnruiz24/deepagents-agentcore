@@ -12,7 +12,7 @@ import time
 from boto3.session import Session
 
 # AWS configuration
-os.environ["AWS_PROFILE"] = "mll-dev"
+os.environ["AWS_PROFILE"] = "your-aws-profile"
 os.environ["AWS_REGION"] = "eu-central-1"
 
 
@@ -46,14 +46,14 @@ def create_agentcore_role(agent_name):
     account_id = boto_session.client("sts").get_caller_identity()["Account"]
 
     # S3 bucket for literacy framework
-    s3_bucket_name = "literacy-framework-development-961105418118-eu-central-1"
+    s3_bucket_name = "literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1"
 
     # Bedrock Knowledge Base IDs for all 4 levels
     kb_ids = {
-        "level_1": "QADZTSAPWX",
-        "level_2": "KGGD2PTQ2N",
-        "level_3": "7MGFSODDVI",
-        "level_4": "CHYWO1H6OM",
+        "level_1": "YOUR_LEVEL_1_KB_ID",
+        "level_2": "YOUR_LEVEL_2_KB_ID",
+        "level_3": "YOUR_LEVEL_3_KB_ID",
+        "level_4": "YOUR_LEVEL_4_KB_ID",
     }
 
     role_policy = {

@@ -366,7 +366,7 @@ def query_level_4_kb(query: str, max_results: int = 10) -> dict:
     """
     Query Level 4 knowledge base.
 
-    Note: Level 4 has its own dedicated expert-level KB (CHYWO1H6OM).
+    Note: Level 4 has its own dedicated expert-level KB (YOUR_LEVEL_4_KB_ID).
 
     Args:
         query: Natural language query
