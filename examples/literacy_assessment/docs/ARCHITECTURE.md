@@ -607,9 +607,10 @@ Local Development Machine
     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  AWS Bedrock AgentCore                                               │
-│  Agent: literacy_assessment-nOAwV9Bfmp                               │
+│  Agent: literacy_assessment-<AGENT_ID>                               │
+│  Agent ID: literacy_assessment-<AGENT_ID>                            │
 │  ARN: arn:aws:bedrock-agentcore:eu-central-1:YOUR_AWS_ACCOUNT_ID:runtime/  │
-│       literacy_assessment-nOAwV9Bfmp                                 │
+│       literacy_assessment-<AGENT_ID>                                 │
 │  ┌────────────────────────────────────────────────────────────┐    │
 │  │  Serverless Runtime                                         │    │
 │  │  - Auto-scaling container instances                         │    │
@@ -624,7 +625,7 @@ Local Development Machine
 ### Observability
 
 **CloudWatch Logs**:
-- Log Group: `/aws/bedrock-agentcore/runtimes/literacy_assessment-nOAwV9Bfmp-DEFAULT`
+- Log Group: `/aws/bedrock-agentcore/runtimes/literacy_assessment-<AGENT_ID>-DEFAULT`
 - Structured JSON logging
 - Request/response traces
 - Tool execution details

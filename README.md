@@ -90,7 +90,7 @@ s3://literacy-framework-development-YOUR_AWS_ACCOUNT_ID-eu-central-1/
 ### 1. Navigate to Deployment Directory
 
 ```bash
-cd /Users/john.ruiz/Documents/projects/deepagents/deploy/agentcore_literacy_assessment
+cd <project-root>/deploy/literacy_assessment_clean
 ```
 
 ### 2. Set AWS Credentials
