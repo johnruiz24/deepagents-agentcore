@@ -51,14 +51,42 @@ Your AWS profile (`your-aws-profile`) must have permissions to:
 
 ### Knowledge Base Setup
 
-Ensure the following Bedrock Knowledge Bases are created and accessible:
+**IMPORTANT**: You must create 4 Bedrock Knowledge Bases before deploying the agent.
 
-| Level | KB ID | Purpose |
-|-------|-------|---------|
-| Level 1 | `YOUR_LEVEL_1_KB_ID` | Foundational content |
-| Level 2 | `YOUR_LEVEL_2_KB_ID` | Intermediate content |
-| Level 3 | `YOUR_LEVEL_3_KB_ID` | Advanced content |
-| Level 4 | `YOUR_LEVEL_4_KB_ID` | Expert content (shares with Level 3) |
+The agent requires level-specific Knowledge Bases containing curriculum content. Use the documents provided in the `data/` folder to create these Knowledge Bases:
+
+| Level | KB ID | Purpose | Source Documents |
+|-------|-------|---------|------------------|
+| Level 1 | `YOUR_LEVEL_1_KB_ID` | Foundational content | `data/level_1/` |
+| Level 2 | `YOUR_LEVEL_2_KB_ID` | Intermediate content | `data/level_2/` |
+| Level 3 | `YOUR_LEVEL_3_KB_ID` | Advanced content | `data/level_3/` |
+| Level 4 | `YOUR_LEVEL_4_KB_ID` | Expert content | `data/level_4/` |
+
+**Knowledge Base Creation Steps:**
+
+1. **Upload Documents to S3**: Upload the documents from each `data/level_X/` folder to your S3 bucket
+2. **Create Knowledge Bases**: In AWS Bedrock console, create 4 separate Knowledge Bases
+3. **Configure Data Sources**: Point each Knowledge Base to the corresponding level folder in S3
+4. **Update Configuration**: Replace the placeholder KB IDs in `utils.py` with your actual Knowledge Base IDs
+
+**Required Documents Structure:**
+```
+data/
+├── level_1/          # Foundational literacy content
+│   ├── L1-M1_*.pdf   # Module documents
+│   ├── L1-M2_*.pdf
+│   └── ...
+├── level_2/          # Intermediate literacy content
+│   ├── L2-M1_*.pdf
+│   ├── L2-M2_*.pdf
+│   └── ...
+├── level_3/          # Advanced literacy content
+│   ├── L3-M1_*.pdf
+│   └── ...
+└── level_4/          # Expert literacy content
+    ├── L4-M1_*.pdf
+    └── ...
+```
 
 ### S3 Bucket Structure
 
